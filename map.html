@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Leaflet.js Guide</title>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <!-- Get the leaflet CSS file -->
+    <!--<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+          crossorigin="" />-->
+    <link href="leaflet/leaflet.css" rel="stylesheet" />
+    <script src="html/js/jquery3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>My locations in Map</h1>
+   <input type="button" value="search" onclick="updatelocation()" /> <input type="text" id="param" placeholder="1 or 2 to test " /><br />
+    <!-- Specify the map and it's dimensions -->
+    <div id="map" style="width: 960px; height: 500px"></div>
+
+    <!-- Get the leaflet JavaScript file -->
+    <script src="leaflet/leaflet.js"></script>
+    <!--<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+            integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+            crossorigin=""></script>-->
+    <script>
+        if (map != null)
+            map.remove();
+        var map = L.map('map')
+    // Initialize the map
+         //const marker1 = L.marker([38.0756000, 46.2818000])
+                    //    .bindPopup('<a href="#">گلستان باغی</a>')
+                    //    .addTo(map);
+                    //const marker2 = L.marker([38.0723776, 46.3044763])
+                    //    .bindPopup('<a href="#">تیم تارا, تبریز</a>')
+                    //    .addTo(map);
+                    //const marker3 = L.marker([38.0683339, 46.2972665])
+                    //    .bindPopup('<a href="#">تجهیزات پزشکی رادطبیبان, تبریز</a>')
+                    //    .addTo(map);
+                    //const marker4 = L.marker([38.0757930, 46.3066374])
+                    //    .bindPopup('<a href="#">آنتیک امیدوار</a>')
+                    //    .addTo(map);
+                    //const marker5 = L.marker([38.0649145, 46.3132820])
+                    //    .bindPopup('<a href="#">خدمات و لوازم کامپیوتری بهمن</a>')
+                    //    .addTo(map);
+                    //const marker6 = L.marker([38.0999700, 46.2978200])
+                    //    .bindPopup('<a href="#">خانه ما</a>')
+                    //    .addTo(map);
+                    //const marker7 = L.marker([38.0955542, 46.2969822])
+                    //    .bindPopup('<a href="#">انبار سردار</a>')
+                    //    .addTo(map);
+                    //const marker8 = L.marker([38.0956898, 46.2912542])
+                    //    .bindPopup('<a href="#">فروشگاه مرکزی پروتئین 712</a>')
+                    //    .addTo(map);
+                    //const marker9 = L.marker([38.0928854, 46.2959840])
+                    //    .bindPopup('<a href="#">The place has gone or never existed.</a>')
+                    //    .addTo(map);
+                    //const marker10 = L.marker([38.0907485, 46.2901341])
+                    //    .bindPopup('<a href="#">بوتیک سیاه و سفید</a>')
+                    //    .addTo(map);
+                    // Bind popup to the marker with a popup
+        // read from service
+        $(document).ready(function () {
+            updatelocation();
+        });
+        function updatelocation() {
+            var par = document.getElementById('param').value;
+            if (par == "") { par = "1"; }
+           
+            $.ajax({
+                type: "POST",
+                url: "https://webservice.ijk.ir/Locations.asmx/GetLocations",
+                data: "{'param1':'" + par + "','param2':'" + par +"'}",
+                contentType: "application/json",
+                datatype: "json",
+                success: function (responseFromServer) {
+                    // alert(responseFromServer.d)
+                    map.eachLayer(function (DisplayData) {
+                        map.removeLayer(DisplayData);
+                    });
+
+                  
+                    //alert(this.responseText);
+                    // Get the tile layer from OpenStreetMaps
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+
+                        // Specify the maximum zoom of the map
+                        maxZoom: 19,
+
+                        // Set the attribution for OpenStreetMaps
+                        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    }).addTo(map);
+
+                    // Set the view of the map
+                    // with the latitude, longitude and the zoom value
+                    map.setView([38.0839, 46.3041], 13);
+
+                    // Set the map view to the user's location
+                    // Uncomment below to set map according to user location
+                    // map.locate({setView: true, maxZoom: 16});
+
+                    // Show a market at the position of the Eiffel Tower
+                    let eiffelMarker = L.marker([38.0999700, 46.2978200]).addTo(map);
+
+                    eiffelMarker.bindPopup("خانه ما").openPopup();
+
+                    var DisplayData = JSON.parse(responseFromServer.d);
+                    map.on('click', function (e) {
+                        alert("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng)
+                    });
+                    //map.events.register("click", map, function (e) {
+                    //    var position = map.getLonLatFromPixel(e.xy);
+                    //    alert("Lat, Lon : " + position.lon.toFixed(3), position.lat.toFixed(3));
+
+                    //});
+                   
+                    var marker1 = null;
+                    var orangeIcon;
+                    $.each(DisplayData, function (index, value) {
+
+                        if (value["Lattitude"] != null && value["Longitude"] != null) {
+                            //marker1 = L.marker([parsefloat(value["Lattitude"]), parseFloat(value["Longitude"])]).bindPopup(value["LocationName"]).addTo(map);
+                            var marker6 = L.marker([value["Lattitude"], value["Longitude"]]).bindPopup('<a href="#">' + value["LocationName"] + '</a>').addTo(map);
+                        }
+                        else {
+                            map.eachLayer(function (DisplayData) {
+                                map.removeLayer(DisplayData);
+                            });
+
+                            map.addLayer(Layer);
+                        }
+                    });
+                },
+                error: function (objXMLHttpRequest, textStatus, errorThrown) {
+                    debugger;
+                }
+            });
+        }
+       //
+            //var xhttp = new XMLHttpRequest();
+            //xhttp.onreadystatechange = function () {
+            //    if (this.readyState == 4 && this.status == 200) {
+                  
+            //       // if (DisplayData.length != 0) {
+            //            //map.eachLayer(function (DisplayData) {
+            //            //    map.removeLayer(DisplayData)
+            //            //});
+            //            //map.addLayer(Layer);
+                        
+                      
+
+            //       // }
+            //    } 
+            //};
+            //xhttp.open("GET", "https://webservice.ijk.ir/Locations.asmx/GetLocations?param1=2&param2=2" , true);
+            //xhttp.send();
+    
+
+    </script>
+</body>
+</html>

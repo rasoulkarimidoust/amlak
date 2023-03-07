@@ -1,0 +1,429 @@
+body {
+    font: 14px IRANSans;
+    background: url(img/back.jpg) center no-repeat;
+    background-size: cover;
+}
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: bold;
+    src: url('fonts/eot/IRANSansWeb_Bold.eot');
+    src: url('fonts/eot/IRANSansWeb_Bold.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+    url('fonts/woff2/IRANSansWeb_Bold.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
+    url('fonts/woff/IRANSansWeb_Bold.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('fonts/ttf/IRANSansWeb_Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 500;
+    src: url('fonts/eot/IRANSansWeb_Medium.eot');
+    src: url('fonts/eot/IRANSansWeb_Medium.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+    url('fonts/woff2/IRANSansWeb_Medium.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
+    url('fonts/woff/IRANSansWeb_Medium.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('fonts/ttf/IRANSansWeb_Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 300;
+    src: url('fonts/eot/IRANSansWeb_Light.eot');
+    src: url('fonts/eot/IRANSansWeb_Light.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+    url('fonts/woff2/IRANSansWeb_Light.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
+    url('fonts/woff/IRANSansWeb_Light.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('fonts/ttf/IRANSansWeb_Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 200;
+    src: url('fonts/eot/IRANSansWeb_UltraLight.eot');
+    src: url('fonts/eot/IRANSansWeb_UltraLight.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+    url('fonts/woff2/IRANSansWeb_UltraLight.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
+    url('fonts/woff/IRANSansWeb_UltraLight.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('fonts/ttf/IRANSansWeb_UltraLight.ttf') format('truetype');
+}
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: normal;
+    src: url('fonts/eot/IRANSansWeb.eot');
+    src: url('fonts/eot/IRANSansWeb.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+    url('fonts/woff2/IRANSansWeb.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
+    url('fonts/woff/IRANSansWeb.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('fonts/ttf/IRANSansWeb.ttf') format('truetype');
+}
+
+.bg-faded {
+    background-color: rgba(0, 0, 0, 0);
+    height: 110px;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+
+.navbar-light .navbar-nav .nav-link {
+    color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color: rgb(255, 255, 255);
+}
+
+.navbar-light .navbar-nav .open > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.open, .navbar-light .navbar-nav .nav-link.active {
+       color: #fff;
+}
+
+a.nav-link.agahi {
+    border-bottom: 1px solid #9931cc;
+    color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #fff;
+    padding: 10px 25px;
+}
+
+.free {
+    background: #9931cc;
+    padding: 10px 0;
+    border-radius: 0px 25px 25px 0px;
+}
+
+.navbar-light .navbar-toggler {
+    border-color: rgba(0, 0, 0, 0.1);
+    float: left;
+    text-align: left;
+}
+
+.navbar-toggler-right {
+    position: absolute;
+    left: 1rem;
+}
+
+@media (min-width: 768px)
+{
+.navbar-text {
+    float: right;
+    text-align: right;
+    right: 100px;
+    position: absolute;
+    top: 22px;
+}
+
+
+}
+
+
+@media (max-width: 768px)
+{
+div#navbarText {
+background: rgba(255, 255, 255, 0.9);
+    margin: 36px 0;
+    z-index: 999999;
+    padding: 20px;
+}
+a.nav-link.agahi {
+    border-bottom: 1px solid #9931cc;
+    color: #000;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #000;
+    padding: 0 25px;
+}
+
+.navbar-brand {
+    float: right;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+ul.breadc {
+	padding-right:0px;
+
+}
+
+}
+
+li.sabt {
+    background: url(img/shadow.png) center;
+    padding: 13px 26px;
+    background-size: cover;
+    color: #fff;
+    height: 54px;
+    border-radius: 0px 25px 25px 0px;
+
+}
+a.sabta {
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+}
+img.test {
+    position: absolute;
+    left: 26px;
+    top: 0;
+    /* background: red; */
+}
+
+.navbar-light .navbar-toggler {
+    border-color: rgba(0, 0, 0, 0.1);
+    float: left;
+    text-align: left;
+    margin-top: 23px;
+    border: none;
+}
+
+
+
+form1{
+  width: 250px;
+margin: 100px auto;
+  
+}
+
+
+#nights {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: flex-end;
+    -webkit-justify-content: flex-end;
+    cursor: pointer;
+    height: 60px;
+    position: relative;
+    width: 386px;
+    background-color: #f4f5fb;
+    border: 1px solid #dcdff0;
+    text-align: right;
+    padding-right: 15px;
+    margin-top: 16px;
+    line-height: 36px;
+    color: #8d90a2;
+    font-size: 12px;
+    font-family: iransans;
+    font-weight: 500;
+}
+#nights:before {
+    content: "";
+    background: url(img/loc.png) no-repeat;
+    z-index: 9999999999999999999999999;
+    top: -1px;
+    width: 65px;
+    /* margin: 0px 0px 4px 2px; */
+    height: 60px;
+    border-left: 1px solid #939498;
+    right: 0;
+    position: absolute;
+}
+.select {
+  font-size: 20px !important;
+  color: #071933;
+  transition: color .2s ease-in-out;
+  -webkit-transition: color .2s ease-in-out;
+}
+
+#nights:hover > .select {
+  color: #dfbe65;
+}
+
+.select_text {
+  padding-right: 13px;
+}
+
+ul#night_option {
+  width: 250px;
+  background-color: #545963;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: absolute;
+  z-index: 10;
+  display: none;
+}
+
+ul#night_option li {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 30px;
+  width: 220px;
+  list-style: none;
+  color: #fff;
+  text-align: right;
+  transition: background-color .2s ease-in-out;
+  -webkit-transition: background-color .2s ease-in-out;
+  cursor: pointer;
+}
+
+ul#night_option li:hover {
+  background-color: #3a3f49;
+}
+
+
+.select_text {
+    padding-left: 35px;
+    text-align: right;
+    float: right;
+    right: 0;
+}
+
+select.form-control.form-control-lg {
+    float: right;
+    direction: ltr;
+    position: relative;
+}
+
+select.form-control.form-control-lg {
+    background: url(img/loc.png) #fff no-repeat right center;
+    float: right;
+    direction: rtl;
+    border-radius: 0;
+    padding-right: 65px;
+    font-family: iransans;
+        margin: 10px 0;
+    font-size: 14px;
+}
+
+select.form-control.arr.form-control-lg {
+    background: url(img/arr.png) #fff no-repeat right center;
+    float: right;
+    direction: rtl;
+    border-radius: 0;
+    padding-right: 65px;
+        margin: 10px 0;
+    font-family: iransans;
+    font-size: 14px;
+
+}
+.padd {
+    margin-top: 130px;
+    background: rgba(255, 255, 255, 0.44);
+    padding-top: 50px;
+    padding-bottom: 18px;
+}
+
+.t-search{
+        margin: 50px 0;
+
+text-align: center;
+}
+
+a.search-btn {
+    background: #bf3dff;
+    padding: 10px 50px;
+    color: #fff;
+    border-bottom: 4px solid #9931cc;
+    text-decoration:none;
+}
+
+
+
+a.search-btn:hover {
+    background: #9931cc;
+    padding: 10px 50px;
+    color: #fff;
+    border-bottom: 4px solid #9931cc;
+    text-decoration:none;
+    transition: all .3s;
+}
+
+ul.footer li {
+    color: white;
+    display: inline-block;
+    padding: 0 10px;
+    margin-top: 25px;
+    border-left: 1px solid #bf3dff;
+}
+
+.sosials {
+    margin-top: 20px;
+}
+
+
+.apps {
+    margin-top: 10px;
+}
+
+.copy {
+    padding-right: 25px;
+    background: #9932ce;
+    color: #fff;
+    margin-top: 20px;
+}
+
+
+.opacit {
+    background: rgba(0, 0, 0, 0.61);
+    padding-bottom: 12px;
+}
+
+ul.sos li {
+    display: inline-block;
+    background: url(img/bg.png);
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    padding-top: 1px;
+    font-size: 22px;
+    color: #fff;
+
+}
+
+
+ul.sos li:hover {
+
+    color: #bf3dff;
+    
+}
+div#divlist {
+    z-index: 999;
+}
+.LeftAlighn {
+    text-align: right;
+}
+/*============= nasiri style =========*/
+span.sabt{
+	display:none
+}
+.navbar-toggler-icon {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+@media all and (max-width: 991px) {
+	li.sabt {
+		display:none;
+	}
+span.sabt {
+	display:block;
+    background: url(img/shadow.png) center;
+    padding: 13px 26px;
+    background-size: cover;
+    color: #fff;
+    height: 54px;
+    border-radius: 0px 25px 25px 0px;
+	width: 170px;
+    position: absolute;
+    top: 30px;
+    left: 25%;
+}
+}
+@media all and (max-width: 767px) {
+.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+    float: right;
+}
+span.sabt {
+    left: 18%;
+}
+.navbar-light .navbar-nav .open > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.open, .navbar-light .navbar-nav .nav-link.active {
+    color: #000;
+}
+}
+
+@media all and (max-width: 599) {
+span.sabt {
+    left: 15%;
+}
+}

@@ -1,0 +1,2 @@
+﻿<%@ Control Language="VB" AutoEventWireup="false" CodeFile="help.ascx.vb" Inherits="help" %>
+<a runat="server"  target="_blank"  id="anchor" style=" display :inline "><img  src="img/q2.png" style="width:15px;height:15px" /></a>
